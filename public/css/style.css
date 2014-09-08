@@ -1,0 +1,52 @@
+#addPost {
+    width: 31%;
+    margin-left: 34%;
+}
+.page-header {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+#form-add {
+    padding: 20px;
+    background: rgb(250, 250, 250);
+    border-radius: 0px 0px 10px 10px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.form-group {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+#activate {
+    width: 100px;
+    height: 25px;
+    background: rgb(250, 250, 250);
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+    font-family: 'PT Sans Narrow', sans-serif;
+    line-height: 23px;
+    text-align: center;
+}
+.page-header {
+    margin: 0;
+}
+.feed {
+    margin-top: 10px;
+}
+.panel-heading {
+    padding: 5px 10px;
+}
+.panel-title {
+    font-size: 90%;
+    color: rgb(141, 141, 141);
+}
+.panel-footer {
+    padding: 0px 8px;
+    font-size: 90%;
+    text-align: right;
+    color: silver;
+}

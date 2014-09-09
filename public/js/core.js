@@ -87,7 +87,7 @@ $(function(){
 
         VK.Api.call('users.get', {user_ids: user_id, fields: 'photo_50'}, function(r) {
             if(r.response) {
-                $('#author').attr('disabled','disabled').val(r.response[0].first_name+' '+r.response[0].last_name);
+                $('#author').prop("readonly",true).val(r.response[0].first_name+' '+r.response[0].last_name);
             }
         });
 

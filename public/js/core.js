@@ -85,7 +85,7 @@ $(function(){
             apiId: 4543802
         });
 
-        function apiQuery(params) {
+        function apiQuery(params, callback) {
             $.ajax({
                 type: 'post',
                 cache: false,

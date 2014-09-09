@@ -108,7 +108,9 @@ $posts = $app->getPosts();
                                     <div class="panel-title"><?php echo htmlspecialchars($post['title']); ?></div>
                                 </div>
                                 <div class="panel-body">
-                                    <?php echo htmlspecialchars($post['body']);?>
+                                    <?php
+                                    echo str_replace(['<script>','<style>','</script>','</style>'],'', $post['body']);
+                                    ?>
                                 </div>
                                 <div class="panel-footer"><?php echo htmlspecialchars($post['cdate']);?> <?php echo htmlspecialchars($post['author']);?></div>
                             </div>

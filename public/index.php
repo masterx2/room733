@@ -105,12 +105,12 @@ $posts = $app->getPosts();
                         <div class="post">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <div class="panel-title"><?=$post['title']?></div>
+                                    <div class="panel-title"><?php echo htmlspecialchars($post['title']); ?></div>
                                 </div>
                                 <div class="panel-body">
-                                    <?=$post['body']?>
+                                    <?php echo htmlspecialchars($post['body']);?>
                                 </div>
-                                <div class="panel-footer"><?=$post['cdate']?> <?=$post['author']?></div>
+                                <div class="panel-footer"><?php echo htmlspecialchars($post['cdate']);?> <?php echo htmlspecialchars($post['author']);?></div>
                             </div>
                         </div>
                     <?php endforeach ?>

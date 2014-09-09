@@ -36,6 +36,10 @@ class BlogEngine {
     public function getPostsCount() {
         return $this->db->getOne('select count(*) from ?n',$this->dbtable);
     }
+
+    public function deletePost($id) {
+        return $this->db->query('delete from ?n where id = ?i', $this->dbtable, $id);
+    }
 }
 
 $app = new BlogEngine();
@@ -49,10 +53,16 @@ if (isset($_POST['action'])) {
                 $app->addPost($_POST['title'], $_POST['body'], $_POST['author']);
             }
             break;
+        case 'delpost':
+            if (isset($_POST['id'])) {
+                echo $app->deletePost($_POST['id']);
+                die();
+            }
     }
 }
 
 $posts = $app->getPosts();
+
 ?>
 
 <!doctype html>
@@ -106,6 +116,8 @@ $posts = $app->getPosts();
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <div class="panel-title"><?php echo htmlspecialchars($post['title']); ?></div>
+                                    <div class="deletePost" postid="<?=$post['id']?>">X</div>
+                                    <div class="clearfix"></div>
                                 </div>
                                 <div class="panel-body">
                                     <?php
@@ -120,5 +132,32 @@ $posts = $app->getPosts();
             </div>
         </div>
     </div>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter26116719 = new Ya.Metrika({id:26116719,
+                        webvisor:true,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/26116719" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 </html>

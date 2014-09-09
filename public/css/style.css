@@ -53,3 +53,12 @@
 img {
     max-width: 700px;
 }
+.clearfix {
+    clear: both;
+}
+.deletePost {
+    float: right;
+    font-size: 10px;
+    color: silver;
+    cursor: pointer;
+}

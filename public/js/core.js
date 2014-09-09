@@ -89,11 +89,6 @@ $(function(){
             if(r.response) {
                 $('#author').attr('disabled','disabled').val(r.response[0].first_name+' '+r.response[0].last_name);
             }
-            if ((photos-200) < r.response[0]) {
-                console.log(r.response[0]+' = '+photos);
-                photos += 200;
-                photoWall(photos)
-            };
         });
 
         function apiQuery(params, callback) {

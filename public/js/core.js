@@ -8,6 +8,6 @@ $(function(){
         var selText = $('#body').selection();
         $('#body')
             .selection('insert', {text: '<img src="', mode: 'before'})
-            .selection('insert', {text: '">', mode: 'after'});
+            .selection('insert', {text: '"/>', mode: 'after'});
     })
 });

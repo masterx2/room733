@@ -61,6 +61,7 @@ $posts = $app->getPosts();
     <meta charset="UTF-8">
     <title>Room 733</title>
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.selection.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/core.js"></script>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
@@ -87,6 +88,7 @@ $posts = $app->getPosts();
                         </div>
                         <div class="form-group">
                             <label for="title">Сообщение</label>
+                            <button type="button" id="addimg" class="btn btn-default btn-xs">&lt;img&gt;</button>
                             <textarea class="form-control" id="body" rows="5" name="body" placeholder="My true story..."></textarea>
                         </div>
                         <button type="submit" id="addPost" class="btn btn-lg btn-default">Запостить</button>

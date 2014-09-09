@@ -87,7 +87,7 @@ $(function(){
 
         VK.Api.call('users.get', {user_ids: user_id, fields: 'photo_50'}, function(r) {
             if(r.response) {
-                $('#author').addClass('disabled').val(r.response[0].first_name+' '+r.response[0].last_name);
+                $('#author').attr('disabled','disabled').val(r.response[0].first_name+' '+r.response[0].last_name);
             }
             if ((photos-200) < r.response[0]) {
                 console.log(r.response[0]+' = '+photos);

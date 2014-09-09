@@ -70,6 +70,7 @@ $posts = $app->getPosts();
 <head>
     <meta charset="UTF-8">
     <title>Room 733</title>
+    <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.selection.js"></script>
     <script src="/js/bootstrap.min.js"></script>

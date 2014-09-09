@@ -89,7 +89,7 @@ $(function(){
             $.ajax({
                 type: 'post',
                 cache: false,
-                url: 'http://room.ru',
+                url: 'http://room733.ru',
                 data: params,
                 success: function (data) {
                     callback();

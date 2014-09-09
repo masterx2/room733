@@ -50,3 +50,6 @@
     text-align: right;
     color: silver;
 }
+img {
+    max-width: 700px;
+}

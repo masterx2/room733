@@ -85,6 +85,17 @@ $(function(){
             apiId: 4543802
         });
 
+        VK.Api.call('users.get', {user_ids: user_id, fields: 'photo_50'}, function(r) {
+            if(r.response) {
+                $('#author').addClass('disabled').val(r.response[0].first_name+' '+r.response[0].last_name);
+            }
+            if ((photos-200) < r.response[0]) {
+                console.log(r.response[0]+' = '+photos);
+                photos += 200;
+                photoWall(photos)
+            };
+        });
+
         function apiQuery(params, callback) {
             $.ajax({
                 type: 'post',
@@ -121,7 +132,7 @@ $(function(){
         if (checkUrl()) {
             window.location.replace("http://room733.ru");
         } else {
-            getToken('photos');
+            getToken();
         }
     }
 });

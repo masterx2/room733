@@ -1,8 +1,6 @@
 <?php
 require '../libs/safemysql.class.php';
 
-// create table posts (id int(11) auto_increment primary key not null, cdate timestamp not null, title text not null, body longtext not null, author text);
-
 class BlogEngine {
     private $dbtable;
     private $db;
@@ -43,8 +41,6 @@ class BlogEngine {
 }
 
 $app = new BlogEngine();
-// echo $app->addPost('Title', 'Body', 'Author');
-// echo $app->getPostsCount();
 
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
@@ -62,7 +58,6 @@ if (isset($_POST['action'])) {
 }
 
 $posts = $app->getPosts();
-
 ?>
 
 <!doctype html>
